@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Mini App Launcher</title>
+    <!-- Include the Telegram Web Apps JavaScript SDK -->
+    <script src="https://telegram.org"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #242f3d; /* Telegram dark mode color */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .btn {
+            background-color: #2481cc; /* Telegram blue */
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s, transform 0.1s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #288edc;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Change YOUR_BOT_USERNAME to your bot's username without @ -->
+        <a href="https://t.me" class="btn" id="bot-button">Open Bot</a>
+    </div>
+
+    <script>
+        // Initialize the Telegram Web App SDK
+        const tg = window.Telegram.WebApp;
+        
+        // Expand the Mini App to full screen automatically
+        tg.expand();
+
+        // Optional: Make the button close the Mini App and redirect if clicked inside Telegram
+        document.getElementById('bot-button').addEventListener('click', function(e) {
+            // If the application expects a specific action inside the Mini App, handle it here.
+            // For a basic setup, the link will just open the chat or deep link.
+        });
+    </script>
+</body>
+</html>
